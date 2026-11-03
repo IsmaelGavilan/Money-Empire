@@ -1,0 +1,1219 @@
+{
+  "schema_version": 1,
+  "districts": [
+    "BARRIO DE LOS EMPRENDEDORES",
+    "AVENIDA DE LOS MILLONARIOS",
+    "DISTRITO DEL LUJO ABSURDO",
+    "IMPERIO IMPOSIBLE"
+  ],
+  "settings": {
+    "max_step_ms": 60000,
+    "min_cycle_ms": 1000,
+    "shared_dividend_divisor": 1,
+    "milestone_every": 5,
+    "milestone_reward_divisor": 2,
+    "driver_max_frame_ms": 250
+  },
+  "businesses": [
+    {
+      "id": "business_01",
+      "order": 1,
+      "district": 0,
+      "name_es": "Puesto de Aire Embotellado",
+      "description_es": "Aire de barrio con certificado de frescura imaginario.",
+      "price": "100",
+      "base_payout": "1",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "50",
+      "speed_upgrade_cost": "75",
+      "automation_cost": "25",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_02",
+      "order": 2,
+      "district": 0,
+      "name_es": "Tienda de Calcetines Solitarios",
+      "description_es": "Encuentra una nueva vida comercial para cada calcetín sin pareja.",
+      "price": "400",
+      "base_payout": "2",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "200",
+      "speed_upgrade_cost": "300",
+      "automation_cost": "100",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_03",
+      "order": 3,
+      "district": 0,
+      "name_es": "Cafetería del Café Invisible",
+      "description_es": "El aroma se factura por separado; la taza es opcional.",
+      "price": "1600",
+      "base_payout": "6",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "800",
+      "speed_upgrade_cost": "1200",
+      "automation_cost": "400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_04",
+      "order": 4,
+      "district": 0,
+      "name_es": "Lavandería de Billetes",
+      "description_es": "Plancha fortunas de utilería hasta que parecen recién impresas.",
+      "price": "6400",
+      "base_payout": "22",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3200",
+      "speed_upgrade_cost": "4800",
+      "automation_cost": "1600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_05",
+      "order": 5,
+      "district": 0,
+      "name_es": "Fábrica de Memes",
+      "description_es": "Una línea de montaje para chistes con dividendos.",
+      "price": "25600",
+      "base_payout": "86",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "12800",
+      "speed_upgrade_cost": "19200",
+      "automation_cost": "6400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_06",
+      "order": 6,
+      "district": 0,
+      "name_es": "Donuts Intergalácticos",
+      "description_es": "Glaseado estelar para meriendas fuera de órbita.",
+      "price": "102400",
+      "base_payout": "342",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "51200",
+      "speed_upgrade_cost": "76800",
+      "automation_cost": "25600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_07",
+      "order": 7,
+      "district": 0,
+      "name_es": "Oficina de Excusas",
+      "description_es": "Justificantes creativos para reuniones que pudieron ser una nota.",
+      "price": "409600",
+      "base_payout": "1366",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "204800",
+      "speed_upgrade_cost": "307200",
+      "automation_cost": "102400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_08",
+      "order": 8,
+      "district": 0,
+      "name_es": "Supermercado de Cosas Inútiles",
+      "description_es": "Todo lo que nunca necesitaste, ahora en oferta.",
+      "price": "1638400",
+      "base_payout": "5462",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "819200",
+      "speed_upgrade_cost": "1228800",
+      "automation_cost": "409600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_09",
+      "order": 9,
+      "district": 0,
+      "name_es": "Banco de Patitos",
+      "description_es": "Ahorros custodiados con graznidos y mucha seriedad.",
+      "price": "6553600",
+      "base_payout": "21846",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3276800",
+      "speed_upgrade_cost": "4915200",
+      "automation_cost": "1638400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_10",
+      "order": 10,
+      "district": 0,
+      "name_es": "Fábrica de Monedas de Chocolate",
+      "description_es": "El único dividendo que conviene mantener lejos del sol.",
+      "price": "26214400",
+      "base_payout": "87382",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "13107200",
+      "speed_upgrade_cost": "19660800",
+      "automation_cost": "6553600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "72c9a1",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_11",
+      "order": 11,
+      "district": 1,
+      "name_es": "Agencia de Influencers Fantasma",
+      "description_es": "Audiencias transparentes para campañas espectrales.",
+      "price": "104857600",
+      "base_payout": "349526",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "52428800",
+      "speed_upgrade_cost": "78643200",
+      "automation_cost": "26214400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_12",
+      "order": 12,
+      "district": 1,
+      "name_es": "Gimnasio para Carteras",
+      "description_es": "Entrenamiento intensivo para bolsillos con ambición.",
+      "price": "419430400",
+      "base_payout": "1398102",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "209715200",
+      "speed_upgrade_cost": "314572800",
+      "automation_cost": "104857600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_13",
+      "order": 13,
+      "district": 1,
+      "name_es": "Restaurante de Comida Imaginaria",
+      "description_es": "Alta cocina que deja muchísimo espacio para el postre.",
+      "price": "1677721600",
+      "base_payout": "5592406",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "838860800",
+      "speed_upgrade_cost": "1258291200",
+      "automation_cost": "419430400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_14",
+      "order": 14,
+      "district": 1,
+      "name_es": "Hotel de Mascotas Millonarias",
+      "description_es": "Suites con minibar de premios y almohadas de lujo.",
+      "price": "6710886400",
+      "base_payout": "22369622",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3355443200",
+      "speed_upgrade_cost": "5033164800",
+      "automation_cost": "1677721600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_15",
+      "order": 15,
+      "district": 1,
+      "name_es": "Clínica de Billetes Arrugados",
+      "description_es": "Tratamientos cosméticos para fortunas con ojeras.",
+      "price": "26843545600",
+      "base_payout": "89478486",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "13421772800",
+      "speed_upgrade_cost": "20132659200",
+      "automation_cost": "6710886400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_16",
+      "order": 16,
+      "district": 1,
+      "name_es": "Bolsa de los Patitos",
+      "description_es": "Cotizaciones al alza cuando todo el estanque grazna.",
+      "price": "107374182400",
+      "base_payout": "357913942",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "53687091200",
+      "speed_upgrade_cost": "80530636800",
+      "automation_cost": "26843545600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_17",
+      "order": 17,
+      "district": 1,
+      "name_es": "Laboratorio de Oro Líquido",
+      "description_es": "Experimentos dorados con bata y cucharón.",
+      "price": "429496729600",
+      "base_payout": "1431655766",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "214748364800",
+      "speed_upgrade_cost": "322122547200",
+      "automation_cost": "107374182400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_18",
+      "order": 18,
+      "district": 1,
+      "name_es": "Fábrica de Robots Perezosos",
+      "description_es": "Automatiza el descanso para trabajar menos en descansarlo.",
+      "price": "1717986918400",
+      "base_payout": "5726623062",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "858993459200",
+      "speed_upgrade_cost": "1288490188800",
+      "automation_cost": "429496729600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_19",
+      "order": 19,
+      "district": 1,
+      "name_es": "Casino de Monedas de Caramelo",
+      "description_es": "Fábrica temática de dulces: producción fija, sin apuestas ni azar.",
+      "price": "6871947673600",
+      "base_payout": "22906492246",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3435973836800",
+      "speed_upgrade_cost": "5153960755200",
+      "automation_cost": "1717986918400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_20",
+      "order": 20,
+      "district": 1,
+      "name_es": "Banco del Millón Ridículo",
+      "description_es": "Cajas fuertes con espacio extra para ceros.",
+      "price": "27487790694400",
+      "base_payout": "91625968982",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "13743895347200",
+      "speed_upgrade_cost": "20615843020800",
+      "automation_cost": "6871947673600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "74b9e8",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_21",
+      "order": 21,
+      "district": 2,
+      "name_es": "Empresa de Nubes Privadas",
+      "description_es": "Cielos exclusivos con servicio de sombra a domicilio.",
+      "price": "109951162777600",
+      "base_payout": "366503875926",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "54975581388800",
+      "speed_upgrade_cost": "82463372083200",
+      "automation_cost": "27487790694400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_22",
+      "order": 22,
+      "district": 2,
+      "name_es": "Fábrica de Diamantes de Gominola",
+      "description_es": "Brillantes de sabores para joyerías golosas.",
+      "price": "439804651110400",
+      "base_payout": "1466015503702",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "219902325555200",
+      "speed_upgrade_cost": "329853488332800",
+      "automation_cost": "109951162777600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_23",
+      "order": 23,
+      "district": 2,
+      "name_es": "Agencia de Vacaciones a la Luna",
+      "description_es": "Paquetes con vistas a la Tierra y equipaje sin gravedad.",
+      "price": "1759218604441600",
+      "base_payout": "5864062014806",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "879609302220800",
+      "speed_upgrade_cost": "1319413953331200",
+      "automation_cost": "439804651110400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_24",
+      "order": 24,
+      "district": 2,
+      "name_es": "Centro Comercial Infinito",
+      "description_es": "Cada salida conduce convenientemente a otra tienda.",
+      "price": "7036874417766400",
+      "base_payout": "23456248059222",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3518437208883200",
+      "speed_upgrade_cost": "5277655813324800",
+      "automation_cost": "1759218604441600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_25",
+      "order": 25,
+      "district": 2,
+      "name_es": "Compañía de Cohetes de Reparto",
+      "description_es": "Entrega urgente antes de que termine la cuenta atrás.",
+      "price": "28147497671065600",
+      "base_payout": "93824992236886",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "14073748835532800",
+      "speed_upgrade_cost": "21110623253299200",
+      "automation_cost": "7036874417766400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_26",
+      "order": 26,
+      "district": 2,
+      "name_es": "Torre de los Millones",
+      "description_es": "Oficinas apiladas hasta perder la cuenta de las plantas.",
+      "price": "112589990684262400",
+      "base_payout": "375299968947542",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "56294995342131200",
+      "speed_upgrade_cost": "84442493013196800",
+      "automation_cost": "28147497671065600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_27",
+      "order": 27,
+      "district": 2,
+      "name_es": "Universidad de la Riqueza Absurda",
+      "description_es": "Máster en contar ceros y doctorado en ostentación.",
+      "price": "450359962737049600",
+      "base_payout": "1501199875790166",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "225179981368524800",
+      "speed_upgrade_cost": "337769972052787200",
+      "automation_cost": "112589990684262400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_28",
+      "order": 28,
+      "district": 2,
+      "name_es": "Fábrica de Lingotes Rosas",
+      "description_es": "Reservas de riqueza con acabado de algodón de azúcar.",
+      "price": "1801439850948198400",
+      "base_payout": "6004799503160662",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "900719925474099200",
+      "speed_upgrade_cost": "1351079888211148800",
+      "automation_cost": "450359962737049600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_29",
+      "order": 29,
+      "district": 2,
+      "name_es": "Banco de los Billonarios",
+      "description_es": "Atención personalizada para números que ya no caben en la pantalla.",
+      "price": "7205759403792793600",
+      "base_payout": "24019198012642646",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3602879701896396800",
+      "speed_upgrade_cost": "5404319552844595200",
+      "automation_cost": "1801439850948198400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_30",
+      "order": 30,
+      "district": 2,
+      "name_es": "Laboratorio de Multiplicadores",
+      "description_es": "Investigación aplicada a hacer aún más grande lo enorme.",
+      "price": "28823037615171174400",
+      "base_payout": "96076792050570582",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "14411518807585587200",
+      "speed_upgrade_cost": "21617278211378380800",
+      "automation_cost": "7205759403792793600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "da9be8",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_31",
+      "order": 31,
+      "district": 3,
+      "name_es": "Bolsa Galáctica de Memes",
+      "description_es": "El humor viaja a velocidad de dividendo.",
+      "price": "115292150460684697600",
+      "base_payout": "384307168202282326",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "57646075230342348800",
+      "speed_upgrade_cost": "86469112845513523200",
+      "automation_cost": "28823037615171174400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_32",
+      "order": 32,
+      "district": 3,
+      "name_es": "Fábrica de Planetas Dorados",
+      "description_es": "Mundos de exposición con continentes de purpurina.",
+      "price": "461168601842738790400",
+      "base_payout": "1537228672809129302",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "230584300921369395200",
+      "speed_upgrade_cost": "345876451382054092800",
+      "automation_cost": "115292150460684697600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_33",
+      "order": 33,
+      "district": 3,
+      "name_es": "Banco Interdimensional",
+      "description_es": "Depósitos con espacio en más de tres dimensiones.",
+      "price": "1844674407370955161600",
+      "base_payout": "6148914691236517206",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "922337203685477580800",
+      "speed_upgrade_cost": "1383505805528216371200",
+      "automation_cost": "461168601842738790400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_34",
+      "order": 34,
+      "district": 3,
+      "name_es": "Agencia de Agujeros de Gusano",
+      "description_es": "Acerca mercados lejanos sin pagar exceso de equipaje.",
+      "price": "7378697629483820646400",
+      "base_payout": "24595658764946068822",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3689348814741910323200",
+      "speed_upgrade_cost": "5534023222112865484800",
+      "automation_cost": "1844674407370955161600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_35",
+      "order": 35,
+      "district": 3,
+      "name_es": "Impresora de Fortunas",
+      "description_es": "Consumibles: papel, tinta y cantidades ridículas de confianza.",
+      "price": "29514790517935282585600",
+      "base_payout": "98382635059784275286",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "14757395258967641292800",
+      "speed_upgrade_cost": "22136092888451461939200",
+      "automation_cost": "7378697629483820646400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "id": "business_36",
+      "order": 36,
+      "district": 3,
+      "name_es": "Sede Mundial de Patitos",
+      "description_es": "Coordina cada graznido del imperio desde una bañera ejecutiva.",
+      "price": "118059162071741130342400",
+      "base_payout": "393530540239137101142",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "59029581035870565171200",
+      "speed_upgrade_cost": "88544371553805847756800",
+      "automation_cost": "29514790517935282585600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_37",
+      "order": 37,
+      "district": 3,
+      "name_es": "Corporación del Dinero Infinito",
+      "description_es": "El nombre es marketing: la producción es finita y exacta.",
+      "price": "472236648286964521369600",
+      "base_payout": "1574122160956548404566",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "236118324143482260684800",
+      "speed_upgrade_cost": "354177486215223391027200",
+      "automation_cost": "118059162071741130342400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "d98159",
+        "silhouette": "shop",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_38",
+      "order": 38,
+      "district": 3,
+      "name_es": "Torre del Megaimperio",
+      "description_es": "Un ascensor corporativo con demasiados botones dorados.",
+      "price": "1888946593147858085478400",
+      "base_payout": "6296488643826193618262",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "944473296573929042739200",
+      "speed_upgrade_cost": "1416709944860893564108800",
+      "automation_cost": "472236648286964521369600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "e5c06a",
+        "silhouette": "factory",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_39",
+      "order": 39,
+      "district": 3,
+      "name_es": "Banco del Universo",
+      "description_es": "Sucursales en todos los lugares donde cabe una moneda.",
+      "price": "7555786372591432341913600",
+      "base_payout": "25185954575304774473046",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "3777893186295716170956800",
+      "speed_upgrade_cost": "5666839779443574256435200",
+      "automation_cost": "1888946593147858085478400",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "8c80b2",
+        "silhouette": "tower",
+        "footprint": [
+          1,
+          1
+        ],
+        "district_slot": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "id": "business_40",
+      "order": 40,
+      "district": 3,
+      "name_es": "Palacio Supremo del Dinero",
+      "description_es": "La culminación del imperio: hasta las alfombras presumen de saldo.",
+      "price": "30223145490365729367654400",
+      "base_payout": "100743818301219097892182",
+      "cycle_ms": 6000,
+      "production_upgrade_cost": "15111572745182864683827200",
+      "speed_upgrade_cost": "22667359117774297025740800",
+      "automation_cost": "7555786372591432341913600",
+      "max_production_level": 3,
+      "max_speed_level": 2,
+      "upgrade_cost_growth": 3,
+      "production_factor": 2,
+      "visual": {
+        "tint": "f2c664",
+        "roof_tint": "a5c283",
+        "silhouette": "dome",
+        "footprint": [
+          2,
+          1
+        ],
+        "district_slot": [
+          4,
+          1
+        ]
+      }
+    }
+  ]
+}

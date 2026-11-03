@@ -1,5 +1,7 @@
 extends Control
 var money_label: Label
+var income_label: Label
+var business_button: Button
 var benefit_label: Label
 var bonus_label: Label
 var status_label: Label
@@ -9,12 +11,17 @@ var _pulse: Tween
 var _feedback: Control
 
 func _ready() -> void:
+	Services.businesses.set_running(true)
+	income_label = ScreenUI.label("", 28)
+	income_label.position = Vector2(100, 300)
+	add_child(income_label)
+	Services.businesses.businesses_changed.connect(_refresh_income)
 	money_label = ScreenUI.label("", 40)
 	money_label.position = Vector2(100, 110)
 	money_label.size = Vector2(1050, 60)
 	money_label.clip_text = true
 	add_child(money_label)
-	var title := ScreenUI.label("DISTRITO 01 • MONEY CLICKER EMPIRE", 38)
+	var title := ScreenUI.label("MONEY CLICKER EMPIRE • CIUDAD", 38)
 	title.position = Vector2(100, 50)
 	add_child(title)
 	benefit_label = ScreenUI.label("", 32)
@@ -64,11 +71,24 @@ func _ready() -> void:
 	add_child(back)
 	back.pressed.connect(_back)
 	focus_items.append(back)
+	business_button = ScreenUI.button("Negocios y contratos")
+	business_button.position = Vector2(550, 975)
+	business_button.custom_minimum_size.x = 540
+	add_child(business_button)
+	business_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/game/businesses.tscn"))
+	focus_items.append(business_button)
 	ScreenUI.focus_ring(focus_items)
+	_refresh_income()
 	Services.economy.balance_changed.connect(_update_money)
 	Services.economy.benefit_changed.connect(_refresh_shop)
 	Services.economy.click_registered.connect(_click_feedback)
 	_update_money(Services.economy.get_balance())
+
+func _exit_tree() -> void:
+	Services.businesses.set_running(false)
+
+func _refresh_income() -> void:
+	income_label.text = "%d / 40 negocios • Automático: $ %s" % [Services.businesses.owned_count(), MoneyFormat.rate(Services.businesses.get_auto_rate_milli())]
 
 func _process(_delta: float) -> void:
 	var remaining: int = Services.economy.bonus_remaining_ms()

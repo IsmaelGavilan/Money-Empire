@@ -81,6 +81,12 @@ func multiply_small(factor: int) -> BigMoney:
 	return parse(output)
 
 func divide_small_ceil(divisor: int) -> BigMoney:
+	return _divide_small(divisor, true)
+
+func divide_small_floor(divisor: int) -> BigMoney:
+	return _divide_small(divisor, false)
+
+func _divide_small(divisor: int, round_up: bool) -> BigMoney:
 	if divisor <= 0 or divisor > MAX_SMALL:
 		return null
 	var output := ""
@@ -90,4 +96,4 @@ func divide_small_ceil(divisor: int) -> BigMoney:
 		output += str(total / divisor)
 		remainder = total % divisor
 	var result := parse(output)
-	return result.add(parse("1")) if remainder > 0 else result
+	return result.add(parse("1")) if round_up and remainder > 0 else result

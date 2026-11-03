@@ -1,0 +1,378 @@
+{
+	"actions": 302,
+	"automatic_rate_milli": "353403542819419754728444665",
+	"balance": "15139796786993973461449644",
+	"clicks_per_second": 1,
+	"completed": true,
+	"completion_second": 10136,
+	"errors": 0,
+	"first_district_rate_milli": "100743818301219098358260000",
+	"investment_horizon_seconds": 120,
+	"longest_action_gap_seconds": 362,
+	"max_expansion_gap_seconds": 389,
+	"owned": 40,
+	"purchases": [
+		{
+			"automatic_rate_milli": "0",
+			"balance": "0",
+			"business": 1,
+			"gap_seconds": 9,
+			"name": "Puesto de Aire Embotellado",
+			"price": "100",
+			"second": 9
+		},
+		{
+			"automatic_rate_milli": "333",
+			"balance": "28",
+			"business": 2,
+			"gap_seconds": 21,
+			"name": "Tienda de Calcetines Solitarios",
+			"price": "400",
+			"second": 30
+		},
+		{
+			"automatic_rate_milli": "1166",
+			"balance": "273",
+			"business": 3,
+			"gap_seconds": 19,
+			"name": "Cafetería del Café Invisible",
+			"price": "1600",
+			"second": 49
+		},
+		{
+			"automatic_rate_milli": "31333",
+			"balance": "756",
+			"business": 4,
+			"gap_seconds": 19,
+			"name": "Lavandería de Billetes",
+			"price": "6400",
+			"second": 68
+		},
+		{
+			"automatic_rate_milli": "89999",
+			"balance": "13987",
+			"business": 5,
+			"gap_seconds": 24,
+			"name": "Fábrica de Memes",
+			"price": "25600",
+			"second": 92
+		},
+		{
+			"automatic_rate_milli": "515499",
+			"balance": "3993",
+			"business": 6,
+			"gap_seconds": 23,
+			"name": "Donuts Intergalácticos",
+			"price": "102400",
+			"second": 115
+		},
+		{
+			"automatic_rate_milli": "2560999",
+			"balance": "6742",
+			"business": 7,
+			"gap_seconds": 37,
+			"name": "Oficina de Excusas",
+			"price": "409600",
+			"second": 152
+		},
+		{
+			"automatic_rate_milli": "11692499",
+			"balance": "33114",
+			"business": 8,
+			"gap_seconds": 46,
+			"name": "Supermercado de Cosas Inútiles",
+			"price": "1638400",
+			"second": 198
+		},
+		{
+			"automatic_rate_milli": "51436999",
+			"balance": "18189",
+			"business": 9,
+			"gap_seconds": 67,
+			"name": "Banco de Patitos",
+			"price": "6553600",
+			"second": 265
+		},
+		{
+			"automatic_rate_milli": "196504499",
+			"balance": "13368474",
+			"business": 10,
+			"gap_seconds": 87,
+			"name": "Fábrica de Monedas de Chocolate",
+			"price": "26214400",
+			"second": 352
+		},
+		{
+			"automatic_rate_milli": "804986665",
+			"balance": "1275361",
+			"business": 11,
+			"gap_seconds": 89,
+			"name": "Agencia de Influencers Fantasma",
+			"price": "104857600",
+			"second": 441
+		},
+		{
+			"automatic_rate_milli": "3424593999",
+			"balance": "3826927",
+			"business": 12,
+			"gap_seconds": 155,
+			"name": "Gimnasio para Carteras",
+			"price": "419430400",
+			"second": 596
+		},
+		{
+			"automatic_rate_milli": "14391366665",
+			"balance": "1093641",
+			"business": 13,
+			"gap_seconds": 214,
+			"name": "Restaurante de Comida Imaginaria",
+			"price": "1677721600",
+			"second": 810
+		},
+		{
+			"automatic_rate_milli": "59941571332",
+			"balance": "18388980",
+			"business": 14,
+			"gap_seconds": 276,
+			"name": "Hotel de Mascotas Millonarias",
+			"price": "6710886400",
+			"second": 1086
+		},
+		{
+			"automatic_rate_milli": "248003811332",
+			"balance": "13491379145",
+			"business": 15,
+			"gap_seconds": 351,
+			"name": "Clínica de Billetes Arrugados",
+			"price": "26843545600",
+			"second": 1437
+		},
+		{
+			"automatic_rate_milli": "1020847049332",
+			"balance": "74411591",
+			"business": 16,
+			"gap_seconds": 339,
+			"name": "Bolsa de los Patitos",
+			"price": "107374182400",
+			"second": 1776
+		},
+		{
+			"automatic_rate_milli": "4185147886665",
+			"balance": "1181980539",
+			"business": 17,
+			"gap_seconds": 389,
+			"name": "Laboratorio de Oro Líquido",
+			"price": "429496729600",
+			"second": 2165
+		},
+		{
+			"automatic_rate_milli": "17102404067999",
+			"balance": "4470974267",
+			"business": 18,
+			"gap_seconds": 385,
+			"name": "Fábrica de Robots Perezosos",
+			"price": "1717986918400",
+			"second": 2550
+		},
+		{
+			"automatic_rate_milli": "69704525066665",
+			"balance": "15838531163",
+			"business": 19,
+			"gap_seconds": 380,
+			"name": "Casino de Monedas de Caramelo",
+			"price": "6871947673600",
+			"second": 2930
+		},
+		{
+			"automatic_rate_milli": "283479772097332",
+			"balance": "13785754077007",
+			"business": 20,
+			"gap_seconds": 375,
+			"name": "Banco del Millón Ridículo",
+			"price": "27487790694400",
+			"second": 3305
+		},
+		{
+			"automatic_rate_milli": "1150789901429999",
+			"balance": "53909473615",
+			"business": 21,
+			"gap_seconds": 327,
+			"name": "Empresa de Nubes Privadas",
+			"price": "109951162777600",
+			"second": 3632
+		},
+		{
+			"automatic_rate_milli": "4664508017597999",
+			"balance": "1050766118619",
+			"business": 22,
+			"gap_seconds": 367,
+			"name": "Fábrica de Diamantes de Gominola",
+			"price": "439804651110400",
+			"second": 3999
+		},
+		{
+			"automatic_rate_milli": "18882087140466665",
+			"balance": "155324502976",
+			"business": 23,
+			"gap_seconds": 363,
+			"name": "Agencia de Vacaciones a la Luna",
+			"price": "1759218604441600",
+			"second": 4362
+		},
+		{
+			"automatic_rate_milli": "76349883819611332",
+			"balance": "4121398505200",
+			"business": 24,
+			"gap_seconds": 360,
+			"name": "Centro Comercial Infinito",
+			"price": "7036874417766400",
+			"second": 4722
+		},
+		{
+			"automatic_rate_milli": "308422785027959999",
+			"balance": "14139996864188726",
+			"business": 25,
+			"gap_seconds": 358,
+			"name": "Compañía de Cohetes de Reparto",
+			"price": "28147497671065600",
+			"second": 5080
+		},
+		{
+			"automatic_rate_milli": "1244853908418731332",
+			"balance": "60908481605326",
+			"business": 26,
+			"gap_seconds": 313,
+			"name": "Torre de los Millones",
+			"price": "112589990684262400",
+			"second": 5393
+		},
+		{
+			"automatic_rate_milli": "5020759219997266665",
+			"balance": "710497526000857",
+			"business": 27,
+			"gap_seconds": 353,
+			"name": "Universidad de la Riqueza Absurda",
+			"price": "450359962737049600",
+			"second": 5746
+		},
+		{
+			"automatic_rate_milli": "20236598772044964665",
+			"balance": "5632168308612845",
+			"business": 28,
+			"gap_seconds": 351,
+			"name": "Fábrica de Lingotes Rosas",
+			"price": "1801439850948198400",
+			"second": 6097
+		},
+		{
+			"automatic_rate_milli": "81518280755147366665",
+			"balance": "18349169949167149",
+			"business": 29,
+			"gap_seconds": 349,
+			"name": "Banco de los Billonarios",
+			"price": "7205759403792793600",
+			"second": 6446
+		},
+		{
+			"automatic_rate_milli": "328208162843934970665",
+			"balance": "14472227872219969789",
+			"business": 30,
+			"gap_seconds": 347,
+			"name": "Laboratorio de Multiplicadores",
+			"price": "28823037615171174400",
+			"second": 6793
+		},
+		{
+			"automatic_rate_milli": "1320821832650195586665",
+			"balance": "111903695072249091",
+			"business": 31,
+			"gap_seconds": 305,
+			"name": "Bolsa Galáctica de Memes",
+			"price": "115292150460684697600",
+			"second": 7098
+		},
+		{
+			"automatic_rate_milli": "5313246760379991944665",
+			"balance": "1141468542975980865",
+			"business": 32,
+			"gap_seconds": 344,
+			"name": "Fábrica de Planetas Dorados",
+			"price": "461168601842738790400",
+			"second": 7442
+		},
+		{
+			"automatic_rate_milli": "21365561868569120923332",
+			"balance": "2186303660560370473",
+			"business": 33,
+			"gap_seconds": 342,
+			"name": "Banco Interdimensional",
+			"price": "1844674407370955161600",
+			"second": 7784
+		},
+		{
+			"automatic_rate_milli": "85886058587873296037999",
+			"balance": "9243486060502469619",
+			"business": 34,
+			"gap_seconds": 341,
+			"name": "Agencia de Agujeros de Gusano",
+			"price": "7378697629483820646400",
+			"second": 8125
+		},
+		{
+			"automatic_rate_milli": "345142607694201163364665",
+			"balance": "14816285956359620065565",
+			"business": 35,
+			"gap_seconds": 340,
+			"name": "Impresora de Fortunas",
+			"price": "29514790517935282585600",
+			"second": 8465
+		},
+		{
+			"automatic_rate_milli": "1356433500568188927496665",
+			"balance": "199741104575835716936",
+			"business": 36,
+			"gap_seconds": 304,
+			"name": "Sede Mundial de Patitos",
+			"price": "118059162071741130342400",
+			"second": 8769
+		},
+		{
+			"automatic_rate_milli": "5451733016943209211958665",
+			"balance": "1455443426282617780719",
+			"business": 37,
+			"gap_seconds": 344,
+			"name": "Corporación del Dinero Infinito",
+			"price": "472236648286964521369600",
+			"second": 9113
+		},
+		{
+			"automatic_rate_milli": "21905454649681923802832665",
+			"balance": "822894600786138909535",
+			"business": 38,
+			"gap_seconds": 342,
+			"name": "Torre del Megaimperio",
+			"price": "1888946593147858085478400",
+			"second": 9455
+		},
+		{
+			"automatic_rate_milli": "87995699165972435452528665",
+			"balance": "1049622823341660095243",
+			"business": 39,
+			"gap_seconds": 341,
+			"name": "Banco del Universo",
+			"price": "7555786372591432341913600",
+			"second": 9796
+		},
+		{
+			"automatic_rate_milli": "353403542819419754728444665",
+			"balance": "15139796786993973461449644",
+			"business": 40,
+			"gap_seconds": 340,
+			"name": "Palacio Supremo del Dinero",
+			"price": "30223145490365729367654400",
+			"second": 10136
+		}
+	],
+	"same_second_expansions": 0,
+	"schema": 1
+}

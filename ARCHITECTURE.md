@@ -6,6 +6,8 @@
 
 ```text
 MainMenu / City → Services (composición)
+                       ├─ BusinessStatistics ← señales de BusinessService
+                       ├─ BusinessService → EconomyService
                        ├─ EconomyService
                        ├─ SettingsService → ConfigFile / DisplayServer
                        ├─ SaveService (contrato)
@@ -44,3 +46,22 @@ BigMoney es inmutable mediante su API pública. `parse` solo acepta cadenas de d
 Los getters de saldo y beneficio devuelven valores nuevos; los eventos no exponen el saldo interno. Ningún consumidor debe modificar campos internos con prefijo `_`. Las señales de ingreso, gasto, clic y compra incluyen cantidad/origen o identificador/nivel; permiten conectar estadísticas y logros sin referencias a City. Un error no cuenta como clic ni genera ingreso.
 
 Los estados se mantienen en el autoload entre escenas. El bonus expira con tiempo de proceso monotónico, incluido el menú; `tick()` emite benefit_changed una vez al expirar. La UI usa tweens ligados al nodo para escala/color y textos, y los elimina al terminar o al liberar la escena. No existe conexión adicional de entrada en EconomyService: todas las fuentes convergen en `click()` y comparten el cooldown configurable.
+
+## Fase 3: negocios
+
+- `BusinessCatalog`: valida las 40 definiciones, orden, cuatro distritos de diez, moneda, tiempos, mejoras, metadatos visuales y posiciones lógicas únicas. El catálogo completo se rechaza si falta un negocio o algún dato es inválido. Las fórmulas no dependen de los nombres.
+- `BusinessState`: propiedad, nivel de producción/velocidad, contrato y progreso del ciclo. Solo estado de sesión; sin timestamps, fechas de cierre ni carga offline.
+- `BusinessMath`: cálculo puro de pago con prima, ciclo, coste de mejora e IPS. Los IPS se representan en milésimas enteras y son informativos; los pagos reales son unidades enteras exactas.
+- `BusinessService`: compra secuencial, mejoras, contratos, recogida manual y avance explícito por milisegundos. Mantiene cache de pagos/ciclos/IPS; publica copias de definiciones y snapshots de estado. El servicio conoce el monedero, no las escenas ni los controles.
+- `BusinessStatistics`: consumidor separado de eventos. Cuenta compras, contratos, mejoras, ciclos y dinero producido; no decide desbloqueos ni llama SDKs de logros. Expone `income_at_capacity` si su suma estadística alcanza el límite numérico; no modifica el monedero.
+- `BusinessScreen` y `BusinessPreview`: navegación, detalles y siluetas provisionales. La representación consume los datos y el estado sin poseer reglas económicas. `City` solo añade acceso a gestión y un resumen de IPS.
+
+EconomyService añade `exchange(cost, credit, source, commit_state)`: valida saldo, resta y crédito antes de modificar nada, ejecuta un callback interno síncrono de estado y solo después notifica a observadores. El callback es código de dominio de confianza, no puede fallar, esperar ni iniciar otra transacción. Esto evita que una señal vea dinero gastado pero propiedad antigua. Las operaciones de BusinessService tienen su propio bloqueo de reentrada y no comprometen progreso de producción si el monedero no acepta el abono.
+
+Eventos: `business_purchased`, `business_upgraded`, `business_automated`, `production_collected(id, amount, cycles, automatic)`, `expansion_milestone` y `businesses_changed`. Los futuros logros podrán observarlos; el servicio de logros sigue declarando integración no disponible. Los créditos de hitos y el gasto se notifican también en EconomyService con origen `business_purchase`.
+
+Services compone un único BusinessService con el mismo EconomyService usado por la sede. Su driver usa delta del motor exclusivamente, conserva la fracción de milisegundo, pausa en menús y pérdida de foco y descarta el primer frame de reanudación. City y BusinessScreen activan/desactivan producción al entrar/salir. No hay cálculo de diferencias entre fechas, ni ganancias offline, ni lectura de tiempo monotónico dentro de BusinessService. `advance_ms` acotado también permite simulación rápida y reproducible sin UI.
+
+Para fase visual: cada definición tiene `visual.tint`, `roof_tint`, `silhouette`, `footprint` y `district_slot`, además de ID/orden estables. La posición es un slot lógico, no coordenadas de píxeles: el futuro layout debe separar slots según la huella. Se pueden añadir escenas de edificios asociadas a IDs o siluetas sin duplicar scripts económicos. El catálogo ya garantiza slots únicos dentro de cada distrito. No se ha construido todavía esa ciudad evolutiva.
+
+`docs/.gdignore` excluye los informes de la importación de recursos: sus CSV son tablas de balance, no archivos de traducción. No se empaquetan traducciones generadas a partir de esos informes.

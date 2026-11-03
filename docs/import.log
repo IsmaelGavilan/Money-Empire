@@ -9,14 +9,34 @@ Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 [  83% ] first_scan_filesystem | Starting file scan...
 [ DONE ] first_scan_filesystem
 
-[   0% ] update_scripts_classes | Started Registering global classes... (7 steps)
-[   0% ] update_scripts_classes | BigMoney
-[  12% ] update_scripts_classes | MoneyFormat
-[  25% ] update_scripts_classes | EconomyService
-[  37% ] update_scripts_classes | 
-[  50% ] update_scripts_classes | HeadquartersButton
-[  62% ] update_scripts_classes | 
-[  75% ] update_scripts_classes | 
+[   0% ] update_scripts_classes | Started Registering global classes... (27 steps)
+[   0% ] update_scripts_classes | BusinessCatalog
+[   3% ] update_scripts_classes | BusinessMath
+[   7% ] update_scripts_classes | BusinessService
+[  10% ] update_scripts_classes | BusinessState
+[  14% ] update_scripts_classes | BusinessStatistics
+[  17% ] update_scripts_classes | BigMoney
+[  21% ] update_scripts_classes | EconomyCatalog
+[  25% ] update_scripts_classes | MoneyFormat
+[  28% ] update_scripts_classes | ConsoleAdapter
+[  32% ] update_scripts_classes | PlatformAdapter
+[  35% ] update_scripts_classes | SteamAdapter
+[  39% ] update_scripts_classes | WindowsAdapter
+[  42% ] update_scripts_classes | AchievementService
+[  46% ] update_scripts_classes | EconomyService
+[  50% ] update_scripts_classes | SaveService
+[  53% ] update_scripts_classes |
+[  57% ] update_scripts_classes | SettingsService
+[  60% ] update_scripts_classes | BusinessPreview
+[  64% ] update_scripts_classes |
+[  67% ] update_scripts_classes |
+[  71% ] update_scripts_classes | HeadquartersButton
+[  75% ] update_scripts_classes |
+[  78% ] update_scripts_classes | ScreenUI
+[  82% ] update_scripts_classes |
+[  85% ] update_scripts_classes |
+[  89% ] update_scripts_classes |
+[  92% ] update_scripts_classes |
 [ DONE ] update_scripts_classes
 
 [   0% ] loading_editor_layout | Started Loading editor (5 steps)

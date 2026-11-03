@@ -187,3 +187,28 @@ func purchase(id: String) -> Error:
 	benefit_changed.emit()
 	_notifying = false
 	return OK
+
+func exchange(cost: BigMoney, credit: BigMoney, source: StringName, commit_state: Callable = Callable()) -> Error:
+	# Cross-service transaction: validate money first; commit trusted, synchronous
+	# domain state before observers can query it. Callback must not fail or await.
+	if _notifying:
+		return ERR_BUSY
+	if cost == null or credit == null:
+		return ERR_INVALID_PARAMETER
+	var next := _balance.subtract(cost)
+	if next == null:
+		return ERR_UNAVAILABLE
+	next = next.add(credit)
+	if next == null:
+		return ERR_OUT_OF_MEMORY
+	_notifying = true
+	_balance = next
+	if commit_state.is_valid():
+		commit_state.call()
+	balance_changed.emit(get_balance())
+	if cost.decimal() != "0":
+		money_spent.emit(BigMoney.parse(cost.decimal()), source)
+	if credit.decimal() != "0":
+		money_earned.emit(BigMoney.parse(credit.decimal()), source)
+	_notifying = false
+	return OK

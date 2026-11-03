@@ -36,6 +36,46 @@ Unidades monetarias enteras exactas, hasta 300 dígitos. No existen valores mone
 
 Español: mil (10³), M (10⁶), mil M (10⁹), B = billón (10¹²), mil B (10¹⁵), T = trillón (10¹⁸). Inglés: K, M, B = billion (10⁹), T = trillion (10¹²), Qa y Qi. Desde 10²¹, notación científica decimal. Coma decimal en español, punto en inglés. El formateador admite ambas escalas; la interfaz completa sigue en español.
 
-## Fuera de fase 2
+## Fase 3: negocios e ingresos
 
-Negocios, distritos desbloqueables, ingresos automáticos, minijuegos, guardado real, catálogo de logros, SDKs, localización completa, audio y arte final. No se ha avanzado a la siguiente fase.
+Los 40 negocios solicitados están definidos en `data/businesses.json`: cuatro distritos, diez negocios cada uno y orden fijo de compra. Comprar el negocio N desbloquea N+1; el primero está disponible al comenzar. No hay pago separado por distrito ni requisitos ocultos. Se pueden consultar las fichas de los negocios bloqueados.
+
+Cada definición incluye nombre, descripción, precio, pago base por ciclo, duración, costes y límites de mejora, contrato y datos visuales. El estado de sesión conserva propiedad, nivel de producción, velocidad, automatización y progreso del ciclo. La gestión se abre con **Negocios y contratos** desde la ciudad.
+
+### Producción, mejoras y contratos
+
+- Sin contrato: el ciclo avanza durante el juego hasta una producción lista. Se cobra manualmente y comienza el siguiente ciclo. No se apilan ciclos sin recoger.
+- Con contrato: cobra y repite automáticamente, sin gerente visible. El contrato se paga una sola vez; cuesta el 25 % del precio de compra.
+- Potencia individual: tres mejoras, cada una ×2 al pago (×8 al máximo). Coste inicial del 50 % del precio del edificio, crecimiento ×3 por compra.
+- Velocidad individual: dos mejoras, de 6 a 3 y 2 segundos. Coste inicial del 75 % del precio, crecimiento ×3.
+- No se cobran operaciones sin saldo, compras repetidas, negocios bloqueados o mejoras al máximo. Los mensajes explican el motivo.
+
+### Curva y utilidad de los primeros negocios
+
+Precio del negocio i (empezando por 0): `100 × 4^i`. El pago base es `ceil(precio / 300)`, mínimo 1; todos comienzan con ciclos de 6 segundos. Las cifras exactas están materializadas como texto decimal en JSON, sin potencias flotantes en ejecución.
+
+Cada expansión actualiza una prima común: `ceil(pago_base_del_último_negocio / negocios_comprados)`. Pago por ciclo = `(base propia + prima común) × 2^nivel_de_producción`. La prima se aplica también a los edificios antiguos y se beneficia de sus mejoras. Solo los comprados producen; las fichas bloqueadas muestran un potencial, no ingresos reales.
+
+Cada cinco compras se concede automáticamente el 50 % del precio del edificio recién adquirido: hitos 5, 10, 15, 20, 25, 30, 35 y 40. Es un crédito único de expansión, no una compra financiada por adelantado. Gastos, recompensa y estado se comprometen en una sola operación.
+
+La sede y sus mejoras de fase 2 conservan sus reglas. No se añadió una nueva escala de pulsación ni se redujeron sus límites.
+
+### Tiempo activo y ausencia de ingresos offline
+
+La producción de negocios solo avanza con la ciudad o la pantalla de gestión abiertas y la aplicación enfocada. El menú pausa la producción. El driver usa delta de frames, conserva fracciones de milisegundo y descarta intervalos de suspensión: máximo 250 ms por frame y un frame sin producción al reanudar. No usa fechas del sistema ni instantes guardados. El servicio admite pasos acotados de hasta 60 segundos para pruebas y simulación explícita; el juego no los obtiene de tiempo offline.
+
+No existe todavía guardado de partidas: al cerrar el proceso desaparece el estado de sesión. Esto no se presenta como un sistema de persistencia terminado. El bonus temporal de la sede mantiene su reloj monotónico de fase 2, independiente de producción; su expiración nunca genera dinero.
+
+### Presentación provisional
+
+Listado por distrito, fichas con descripción, producción potencial y automática total, nivel, progreso y estado del contrato; botones de compra, recogida y mejoras. Las fichas siguen accesibles con mando aunque no se pueda comprar. Hay cuatro siluetas genéricas reutilizables con color, tejado, huella y posición lógica configurables. Gris/borde y etiquetas distinguen bloqueado, disponible, comprado y automatizado.
+
+El casino es únicamente una fábrica temática de producción fija: no hay apuestas, dinero real, sorteos, probabilidades ni azar. La Corporación del Dinero Infinito también produce cantidades finitas.
+
+### Medición inicial
+
+Ver `docs/ECONOMY_SIMULATION.md` y sus JSON/CSV reproducibles. Se ejecutan los mismos servicios que el juego, desde cero, sin fondos de prueba. La política mantiene pulsaciones regulares, recoge ciclos manuales y reinvierte en contratos y mejoras rentables. Su resultado sirve para evaluar la curva; no sustituye jugar ni demuestra que todos los jugadores terminen en el mismo tiempo. Se registran tanto pausas largas como posibles compras encadenadas.
+
+## Pendiente, fuera de fase 3
+
+Representación completa de los 40 edificios sobre la ciudad, evolución artística, minijuegos, guardado real, catálogo de logros, SDKs, traducción completa, audio y arte final. Los eventos y datos de esta entrega preparan la fase visual sin implementarla. No se ha avanzado automáticamente.

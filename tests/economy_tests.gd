@@ -197,14 +197,22 @@ func _presentation() -> void:
 	await process_frame
 	var city := current_scene
 	check(city.headquarters.has_focus(), "HQ initially focused")
+	# Observe the immediate response synchronously: frame duration is variable on CI.
+	var observed_feedback := {"count": 0, "pulse": false}
+	var observe_click := func(_amount, _count):
+		observed_feedback.count = city._feedback.get_child_count()
+		observed_feedback.pulse = city.headquarters.scale.x < 1.0
+	services.economy.click_registered.connect(observe_click)
+
 	_joy(true)
 	await process_frame
 	_joy(false)
 	await process_frame
 	same(services.economy.get_balance(), "10", "Synthetic controller click routed through GUI")
 	check(city.money_label.text == "DINERO  $ 10", "Balance updated immediately in UI")
-	check(city._feedback.get_child_count() == 1, "Floating income created")
-	check(city.headquarters.scale.x < 1.0, "Click pulse animation started")
+	services.economy.click_registered.disconnect(observe_click)
+	check(observed_feedback.count == 1, "Floating income created")
+	check(observed_feedback.pulse, "Click pulse animation started")
 	now_ms = 100
 	_joy(true)
 	await process_frame

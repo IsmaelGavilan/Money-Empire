@@ -16,7 +16,7 @@ func _ready() -> void:
 	var empire := ScreenUI.label("EMPIRE", 110)
 	empire.add_theme_color_override("font_color", ScreenUI.GOLD)
 	menu_panel.add_child(empire)
-	menu_panel.add_child(ScreenUI.label("Tu imperio empieza aquí. • FASE 2", 28))
+	menu_panel.add_child(ScreenUI.label("Tu imperio empieza aquí. • FASE 3", 28))
 	play_button = ScreenUI.button("Jugar")
 	var options := ScreenUI.button("Opciones")
 	var exit_button := ScreenUI.button("Salir")

@@ -1,8 +1,10 @@
-# Inventario de fase 2
+# Inventario — fase 3
 
-Proyecto ampliado sobre fase 1, sin reconstrucción. Nuevos: data/economy.json, scripts/economy/*, scripts/ui/headquarters_button.gd y tests/economy_tests.gd, sus UID y los registros nuevos. Actualizados: EconomyService, ServiceRegistry, City, ScreenUI, MainMenu, project.godot, pruebas de regresión y documentación. Adaptadores, contratos de guardado/logros y escenas .tscn conservados.
+Nuevos: data/businesses.json; scripts/business/ (catálogo, estado, fórmulas, servicio y estadísticas); BusinessScreen y BusinessPreview; escena businesses.tscn; pruebas de negocios y simulación; informes JSON/CSV y logs.
 
-El estado Git local todavía parte del commit inicial del repositorio; la entrega previa se publicó mediante la API de GitHub. Los archivos .uid se incluyen y .godot se excluye.
+Modificados sobre fase 2: EconomyService (exchange transaccional), BigMoney (división entera hacia abajo), MoneyFormat (IPS), ServiceRegistry (composición y driver), City (acceso/resumen), MainMenu y project.godot (etiqueta de fase); README, GAME_DESIGN, ARCHITECTURE, DEVELOPMENT_STATUS y TEST_PLAN. Se conservan las escenas anteriores, controles de sede, adaptadores y contratos de guardado/logros. docs/.gdignore aísla los informes del importador.
+
+El repositorio local continúa en su commit inicial porque las entregas anteriores se publicaron mediante la API de GitHub. No se incluye caché .godot ni artefactos de importación de CSV; sí se incluyen UID de scripts. Los cambios de esta entrega se publican como continuación de la fase 2.
 
 ```text
 .gitignore
@@ -13,22 +15,48 @@ README.md
 TEST_PLAN.md
 audio/.gitkeep
 data/.gitkeep
+data/businesses.json
 data/economy.json
+docs/.gdignore
 docs/.gitkeep
+docs/BUSINESS_BALANCE.csv
+docs/ECONOMY_SIMULATION.md
 docs/FILES.md
 docs/VALIDATION.md
+docs/business-tests.log
+docs/businesses.log
 docs/city.log
 docs/economy-tests.log
 docs/import.log
+docs/progress-active.csv
+docs/progress-active.json
+docs/progress-balanced.csv
+docs/progress-balanced.json
+docs/progress-conservative.csv
+docs/progress-conservative.json
 docs/runtime.log
+docs/simulation-active.log
+docs/simulation-balanced.log
+docs/simulation-conservative.log
 docs/tests.log
 graphics/.gitkeep
 localization/.gitkeep
 project.godot
 scenes/game/.gitkeep
+scenes/game/businesses.tscn
 scenes/game/city.tscn
 scenes/menu/.gitkeep
 scenes/menu/main_menu.tscn
+scripts/business/business_catalog.gd
+scripts/business/business_catalog.gd.uid
+scripts/business/business_math.gd
+scripts/business/business_math.gd.uid
+scripts/business/business_service.gd
+scripts/business/business_service.gd.uid
+scripts/business/business_state.gd
+scripts/business/business_state.gd.uid
+scripts/business/business_statistics.gd
+scripts/business/business_statistics.gd.uid
 scripts/economy/big_money.gd
 scripts/economy/big_money.gd.uid
 scripts/economy/economy_catalog.gd
@@ -56,6 +84,10 @@ scripts/services/service_registry.gd.uid
 scripts/services/settings_service.gd
 scripts/services/settings_service.gd.uid
 scripts/ui/.gitkeep
+scripts/ui/business_preview.gd
+scripts/ui/business_preview.gd.uid
+scripts/ui/business_screen.gd
+scripts/ui/business_screen.gd.uid
 scripts/ui/city.gd
 scripts/ui/city.gd.uid
 scripts/ui/headquarters_button.gd
@@ -65,8 +97,12 @@ scripts/ui/main_menu.gd.uid
 scripts/ui/screen_ui.gd
 scripts/ui/screen_ui.gd.uid
 tests/.gitkeep
+tests/business_tests.gd
+tests/business_tests.gd.uid
 tests/economy_tests.gd
 tests/economy_tests.gd.uid
+tests/progress_simulation.gd
+tests/progress_simulation.gd.uid
 tests/run_tests.gd
 tests/run_tests.gd.uid
 ui/.gitkeep
