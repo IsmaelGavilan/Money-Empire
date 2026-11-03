@@ -1,24 +1,50 @@
-# Plan de pruebas
+# Plan de pruebas — fase 2
 
-## Automatizado
+Godot 4.6.3. Importar primero para generar caché de clases:
 
-Ejecutar los tres comandos del README con Godot 4.6.3. Importar primero para generar la caché de clases globales. La suite termina con código 1 si alguna comprobación falla; leer también la salida para detectar errores del motor.
+```sh
+godot --headless --editor --import --path . --quit
+godot --headless --path . --script res://tests/run_tests.gd
+godot --headless --path . --script res://tests/economy_tests.gd
+godot --headless --path . --quit-after 120
+godot --headless --path . res://scenes/game/city.tscn --quit-after 120
+```
 
-Resultado en esta entrega: **32 comprobaciones, 0 fallos**, código 0. Incluye saldo inicial; límites de tres ranuras y errores explícitos; capacidades negativas de cuatro adaptadores; ausencia de logros simulados; escritura/recarga de configuración; bindings de mando en seis acciones UI; carga del menú; foco inicial y enlaces de navegación; opciones y restauración del foco; botón Jugar hacia ciudad; contador; foco en ciudad; regreso con cancelar.
+Usar perfil de usuario de pruebas: la suite de regresión escribe settings.cfg. En Linux aislar XDG_DATA_HOME, XDG_CONFIG_HOME y XDG_CACHE_HOME en carpetas temporales, sin modificar HOME. En esta validación se usó `/workspace/work/xdg-test`.
 
-Las transiciones se ejercitan emitiendo señales de botones y eventos de acción; esto no equivale a una prueba física de un mando. El renderizador headless no valida la salida gráfica. Arranque adicional: `--quit-after 120`, código 0 sin errores. Importación headless: código 0, sin errores de parser; advertencias/errores de socket del editor por restricciones del entorno.
+## Resultados
 
-La primera importación detectó un error de paréntesis y la primera suite detectó bindings incompletos de aceptar/cancelar y acceso al viewport tras cambio de escena. Se corrigieron y la suite final pasa. Se aislaron los directorios XDG para evitar escribir en el home restringido del entorno.
+- Regresión de base: 32 comprobaciones, cero fallos.
+- Economía y presentación: 558 comprobaciones, cero fallos.
+- Total: 590 comprobaciones. Ambas suites terminan con código 0 y sin errores/avisos de consola.
+- Importación: código 0, sin errores de GDScript. El editor headless registra errores de apertura del socket de depuración en el sandbox.
+- Arranque: menú y ciudad por separado, 120 frames, código 0 sin errores ni avisos.
+- git diff --check: correcto.
 
-## Manual pendiente
+Los registros finales están en docs/; la importación del editor no equivale a una prueba gráfica.
 
-- Windows: abrir proyecto con 4.6.3, F5; verificar menú, opciones, Jugar, regreso y Salir.
-- 1920×1080, 1280×720, 960×540, 4:3 y ultrapanorámico: bandas apropiadas, texto legible y sin cortes.
-- Solo teclado y solo mando: recorrer todos los botones, activar aceptar, cancelar opciones/ciudad, comprobar foco dorado y restauración; repetir tras alternar pantalla completa.
-- Cerrar/reabrir para comprobar persistencia de pantalla completa. Probar carpeta de usuario sin permisos de escritura y comprobar mensaje de error.
-- Ratón: activar cada botón y verificar las transiciones.
-- TV real: legibilidad y margen seguro. Dispositivos de mando reales: conexión inicial y reconexión.
+## Cobertura
 
-## Fase 2 pendiente
+BigMoney: validación de texto, no negativos/NaN/Infinity/Unicode, normalización, acarreo y préstamo más allá de int64, aritmética exacta de 300 dígitos, factores/divisores inválidos, límites y redondeo de costes. 150 casos deterministas de suma/resta/producto contra enteros nativos seguros (450 aserciones).
 
-Validar pulsación única y repetición, límites del saldo, señal de cambio exactamente una vez, formato monetario y equivalencia ratón/mando; comprobar que cambiar de escena no duplica ingresos. Guardado y SDKs requieren planes específicos cuando se implementen.
+Catálogo: campos ausentes, tipos, IDs duplicados, factores no finitos, crecimiento inválido y límites. Compras con overflow en coste y beneficio se rechazan sin saldo o niveles parcialmente modificados.
+
+Economía: saldo inicial, clics, cooldown en sus fronteras, eventos únicos, suma/gasto, compra imposible, tres clics para primera compra, costes progresivos, potencia, multiplicadores compuestos, orden de cálculo, bonus temporal, no acumulación, expiración exacta sin esperar tiempo real, repeticiones, topes y reentrada desde observadores.
+
+Presentación: mando sintético (botones aceptar/cancelar, cruceta y eje del stick) inyectado mediante Input.parse_input_event hasta la GUI. Compra de mejora enfocada, foco inicial y navegación; contador/beneficio inmediatos; mantener un botón; ratón por el manejador GUI y coincidencia ratón/mando; ecos de teclado; textos flotantes, limpieza y restauración de escala; volver y reentrar sin perder mejoras de sesión.
+
+No sustituye una prueba de mando físico, inspección gráfica ni ratón real. Las pruebas automatizadas usan el renderer headless.
+
+## Pruebas manuales pendientes
+
+1. Windows con Godot 4.6.3: F5, menú/opciones/ciudad/salir, pantalla completa y persistencia de esa preferencia.
+2. Ratón real: pulsar sede, mantener, arrastrar fuera antes de soltar, volver y pulsar. Comprobar foco, feedback y ausencia de bloqueos.
+3. Solo mando: navegar toda la tienda con stick/cruceta, comprar, regresar, volver a sede; mantener aceptar y comprobar que no repite; desconectar/reconectar.
+4. Teclado: flechas/Tab, Enter/Espacio y Escape; mantener aceptar; cambiar de aplicación durante una pulsación.
+5. 1920×1080, 1280×720, 960×540, 4:3, ultrapanorámico y TV: legibilidad, bandas, márgenes, efectos y ausencia de recortes.
+6. Jugar varios minutos y evaluar ritmo/costes de las tres mejoras. La predicción numérica no sustituye playtesting.
+7. Comprar fiebre, volver al menú durante más de 10 segundos y regresar: bonus expirado, saldo sin ingresos adicionales. Cerrar/reabrir: sesión a cero (guardado pendiente).
+
+## Fuera de esta fase
+
+Negocios, ingresos automáticos, minijuegos, guardado real, logros, SDKs, localización completa y empaquetado requieren implementación y planes posteriores.

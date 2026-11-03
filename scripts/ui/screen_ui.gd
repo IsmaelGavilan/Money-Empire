@@ -20,7 +20,7 @@ static func button(text: String) -> Button:
 		style.border_color = GOLD if state == "focus" else Color("8b754a")
 		item.add_theme_stylebox_override(state, style)
 	return item
-static func focus_ring(buttons: Array[Button]) -> void:
+static func focus_ring(buttons: Array[Control]) -> void:
 	for i in buttons.size():
 		var previous := buttons[(i - 1 + buttons.size()) % buttons.size()]
 		var following := buttons[(i + 1) % buttons.size()]

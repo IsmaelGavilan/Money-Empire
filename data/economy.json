@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "base_click": "10",
+  "click_cooldown_ms": 80,
+  "upgrades": [
+    {"id": "power", "name_es": "Potencia", "kind": "power", "amount": "10", "base_cost": "30", "growth_numerator": 3, "growth_denominator": 2, "max_level": 50},
+    {"id": "multiplier", "name_es": "Multiplicador", "kind": "multiplier", "factor": 2, "base_cost": "100", "growth_numerator": 3, "growth_denominator": 1, "max_level": 20},
+    {"id": "rush", "name_es": "Fiebre del oro", "kind": "temporary", "factor": 3, "duration_ms": 10000, "base_cost": "80", "growth_numerator": 2, "growth_denominator": 1, "max_level": 50}
+  ]
+}

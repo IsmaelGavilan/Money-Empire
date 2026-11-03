@@ -1,6 +1,6 @@
 # MONEY CLICKER EMPIRE
 
-Base técnica de la **fase 1 de 10**, sin economía jugable. Proyecto Godot real; no es una versión comercial terminada.
+Proyecto en la **fase 2 de 10**, con economía y pulsaciones jugables. Proyecto Godot real; no es una versión comercial terminada.
 
 ## Abrir y ejecutar
 
@@ -24,13 +24,15 @@ En Windows, sustituir `godot` por la ruta al ejecutable, por ejemplo en PowerShe
 
 ## Controles y pantalla
 
-Ratón: botones. Teclado: flechas/Tab, Enter/Espacio para aceptar, Escape para volver. Mando: cruceta o stick izquierdo, botón sur para aceptar y este para volver (nomenclatura neutral). Los botones muestran un borde dorado cuando tienen foco. El menú de opciones permite alternar pantalla completa y persiste el ajuste en `user://settings.cfg`; no requiere ratón.
+Ratón: botones y sede. Mantener aceptar o el ratón no repite ingresos; el filtro compartido entre fuentes es de 80 ms por defecto. Teclado: flechas/Tab, Enter/Espacio para aceptar, Escape para volver. Mando: cruceta o stick izquierdo, botón sur para aceptar y este para volver (nomenclatura neutral). Los botones muestran un borde dorado cuando tienen foco. El menú de opciones permite alternar pantalla completa y persiste el ajuste en `user://settings.cfg`; no requiere ratón.
 
 Lienzo base 1920×1080, ventana inicial 1280×720, mínimo 960×540. `canvas_items` conserva nitidez del texto y `aspect=keep` mantiene 16:9 con bandas en otras proporciones. UI dentro del margen del 5 % aproximadamente; validar en televisores reales antes de certificar.
 
 ## Alcance
 
-Menú, opciones de pantalla, ciudad cenital dibujada con primitivas originales, sede y contador a cero. Servicios desacoplados y contratos de extensión. La sede todavía no genera dinero. Guardado de partidas, logros, Steamworks, consolas, audio e inglés no están implementados. Los métodos de funciones pendientes devuelven `ERR_UNAVAILABLE`; no anuncian éxito.
+Menú y configuración conservados. Ciudad cenital provisional con sede interactiva: 10 por clic inicial, mejoras de potencia, multiplicadores permanentes y bonus temporal. Primera mejora tras 3 pulsaciones. Ratón, teclado y mando; respuesta de escala/color y cantidad ganada flotante. La tienda muestra niveles, coste, beneficio actual y tiempo del bonus.
+
+Economía exacta de hasta 300 dígitos, catálogo configurable en `data/economy.json`, formato español/inglés. No hay partidas guardadas: el progreso vive durante el proceso y se conserva al volver al menú. Guardado real, negocios, automatización, logros, Steamworks, consolas, audio y traducción completa siguen pendientes. Los contratos no implementados devuelven `ERR_UNAVAILABLE`.
 
 Se eligió Godot 4.6.3 porque es la versión estable instalada y permite validar el proyecto con la misma versión fijada. Renderer Compatibility: suficiente para 2D y menor exigencia gráfica en escritorio. No implica soporte ni certificación de consolas. No se garantiza compatibilidad con versiones anteriores de Godot.
 
@@ -39,6 +41,7 @@ Se eligió Godot 4.6.3 porque es la versión estable instalada y permite validar
 ```sh
 godot --headless --editor --import --path . --quit
 godot --headless --path . --script res://tests/run_tests.gd
+godot --headless --path . --script res://tests/economy_tests.gd
 godot --headless --path . --quit-after 120
 ```
 
@@ -49,16 +52,16 @@ Ejecutar las pruebas en un perfil de usuario de pruebas: escriben `settings.cfg`
 ```text
 project.godot
 scenes/       menu/main_menu.tscn, game/city.tscn
-scripts/      services/, platform/, ui/
-data/         futuros catálogos y recursos de balance
+scripts/      economy/, services/, platform/, ui/
+data/         economy.json (catálogo validado)
 graphics/     futuro arte (actualmente primitivas en código)
 audio/        reservado
 ui/           futuros temas y recursos compartidos
 localization/ reservado para traducciones ES/EN
-tests/        run_tests.gd
+tests/        run_tests.gd, economy_tests.gd
 docs/         informe de validación e inventario
 ```
 
-`GAME_DESIGN.md`, `ARCHITECTURE.md`, `DEVELOPMENT_STATUS.md` y `TEST_PLAN.md` describen diseño, contratos, alcance y validación. No hay dependencias comerciales, SDKs ni assets de terceros añadidos. Git ya existía; se conserva su historial y se añade `.gitignore`. La entrega de fase 1 se publica en el repositorio GitHub del proyecto.
+`GAME_DESIGN.md`, `ARCHITECTURE.md`, `DEVELOPMENT_STATUS.md` y `TEST_PLAN.md` describen diseño, contratos, alcance y validación. No hay dependencias comerciales, SDKs ni assets de terceros añadidos. Git ya existía; se conserva su historial y se añade `.gitignore`. La entrega del proyecto se publica en el repositorio GitHub del proyecto.
 
 Para exportar a Windows se necesitarán las plantillas de exportación de **la misma versión** y configurar un preset desde Proyecto → Exportar. No se entrega un ejecutable Windows ni se ha validado en ese sistema.

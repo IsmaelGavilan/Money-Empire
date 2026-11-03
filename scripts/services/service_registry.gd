@@ -11,3 +11,6 @@ func _ready() -> void:
 	if result != OK and result != ERR_FILE_NOT_FOUND:
 		push_warning("No se pudo cargar la configuración: %s" % error_string(result))
 	settings.apply_display()
+
+func _process(_delta: float) -> void:
+	economy.tick()

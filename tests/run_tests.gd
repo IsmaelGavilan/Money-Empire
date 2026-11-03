@@ -10,7 +10,7 @@ func check(condition: bool, message: String) -> void:
 		push_error(message)
 func _run() -> void:
 	var services := root.get_node("Services")
-	check(services.economy.get_balance() == 0, "Initial balance")
+	check(services.economy.get_balance().decimal() == "0", "Initial balance")
 	check(services.saves.is_valid_slot(0) and services.saves.is_valid_slot(2), "Three slot bounds")
 	check(not services.saves.is_valid_slot(-1) and not services.saves.is_valid_slot(3), "Reject invalid slots")
 	check(services.saves.save_slot(0, {}) == ERR_UNAVAILABLE, "Persistence must not claim success")
@@ -50,10 +50,10 @@ func _run() -> void:
 	await process_frame
 	check(current_scene.scene_file_path == "res://scenes/game/city.tscn", "Play opens city")
 	check(current_scene.money_label.text == "DINERO  $ 0", "Balance presentation")
-	check(root.get_viewport().gui_get_focus_owner() is Button, "City has controller focus")
+	check(root.get_viewport().gui_get_focus_owner() is HeadquartersButton, "City has controller focus")
 	current_scene._unhandled_input(cancel)
 	await process_frame
 	await process_frame
 	check(current_scene.scene_file_path == "res://scenes/menu/main_menu.tscn", "Cancel returns to menu")
-	print("PHASE1 TESTS: %d checks, %d failures" % [checks, failures])
+	print("FOUNDATION TESTS: %d checks, %d failures" % [checks, failures])
 	quit(1 if failures else 0)

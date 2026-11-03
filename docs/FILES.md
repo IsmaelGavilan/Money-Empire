@@ -1,6 +1,8 @@
-# Inventario de entrega
+# Inventario de fase 2
 
-Modificado: `README.md`. El resto son archivos nuevos, incluidos los UID de scripts generados por Godot. No se cambió el historial Git existente. `.gitkeep` conserva carpetas reservadas.
+Proyecto ampliado sobre fase 1, sin reconstrucción. Nuevos: data/economy.json, scripts/economy/*, scripts/ui/headquarters_button.gd y tests/economy_tests.gd, sus UID y los registros nuevos. Actualizados: EconomyService, ServiceRegistry, City, ScreenUI, MainMenu, project.godot, pruebas de regresión y documentación. Adaptadores, contratos de guardado/logros y escenas .tscn conservados.
+
+El estado Git local todavía parte del commit inicial del repositorio; la entrega previa se publicó mediante la API de GitHub. Los archivos .uid se incluyen y .godot se excluye.
 
 ```text
 .gitignore
@@ -11,8 +13,12 @@ README.md
 TEST_PLAN.md
 audio/.gitkeep
 data/.gitkeep
+data/economy.json
 docs/.gitkeep
+docs/FILES.md
 docs/VALIDATION.md
+docs/city.log
+docs/economy-tests.log
 docs/import.log
 docs/runtime.log
 docs/tests.log
@@ -23,6 +29,12 @@ scenes/game/.gitkeep
 scenes/game/city.tscn
 scenes/menu/.gitkeep
 scenes/menu/main_menu.tscn
+scripts/economy/big_money.gd
+scripts/economy/big_money.gd.uid
+scripts/economy/economy_catalog.gd
+scripts/economy/economy_catalog.gd.uid
+scripts/economy/money_format.gd
+scripts/economy/money_format.gd.uid
 scripts/platform/.gitkeep
 scripts/platform/console_adapter.gd
 scripts/platform/console_adapter.gd.uid
@@ -46,13 +58,16 @@ scripts/services/settings_service.gd.uid
 scripts/ui/.gitkeep
 scripts/ui/city.gd
 scripts/ui/city.gd.uid
+scripts/ui/headquarters_button.gd
+scripts/ui/headquarters_button.gd.uid
 scripts/ui/main_menu.gd
 scripts/ui/main_menu.gd.uid
 scripts/ui/screen_ui.gd
 scripts/ui/screen_ui.gd.uid
 tests/.gitkeep
+tests/economy_tests.gd
+tests/economy_tests.gd.uid
 tests/run_tests.gd
 tests/run_tests.gd.uid
 ui/.gitkeep
-docs/FILES.md
 ```
